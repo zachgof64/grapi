@@ -1,0 +1,4 @@
+logs
+dist
+*.env
+build
