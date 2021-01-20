@@ -6,7 +6,14 @@ import (
 	"net/http"
 )
 
-//SetupDefaultHeaders ...
+//ResponseStruct - Normal response 
+type ResponseStruct struct {
+	StatusCode int `json:"statusCode"`
+	Message string `json:"message"`
+}
+
+
+//SetupDefaultHeaders - Adds some global headers
 func SetupDefaultHeaders(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Add("Accept", "application/json")
@@ -17,14 +24,14 @@ func SetupDefaultHeaders(next http.Handler) http.Handler {
 	})
 }
 
-//GetRouter ...
+
+//GetRouter - Returns mux router
 func GetRouter() *mux.Router {
 	r := mux.NewRouter()
 	r.Use(SetupDefaultHeaders)
-	if(GetConfig().Logging){
-		CreateLogFile()
-		r.Use(SetupLogging)
-	}
 	r.HandleFunc("/status", routes.Status)
+	if(GetConfig().Logging){
+		SetupLogging(r)
+	}
 	return r
 }

@@ -2,14 +2,13 @@ package main
 
 import (
 	"gopkg.in/yaml.v2"
-	"fmt"
-	"os"
-	"io/ioutil"
+	"github.com/zeuce/golang-api/utils"
 )
 
-//Config ... 
+//Config - Struct for config.yml 
 type Config struct {
 	Logging bool `yaml:"logging"`
+	LogDir string `yaml:"logDir"`
 	LogFile string `yaml:"logFile"`
 	LogPrefix string `yaml:"logPrefix"`
 	Port int `yaml:"port"`
@@ -19,24 +18,10 @@ type Config struct {
 }
 
 
-//GetConfig ... Returns Config Struct
+//GetConfig - Returns Config
 func GetConfig() Config {
 	config := Config{}
-	b := OpenConfigFile("config.yml")
+	b := utils.GetByte("config.yml")
 	 yaml.Unmarshal(b, &config)
 	return config
-}
-
-//OpenConfigFile ... Returns []byte of config
-func OpenConfigFile(configPath string) []byte {
-	file, fileErr := os.Open(configPath)
-	if (fileErr != nil){
-		fmt.Printf("ERROR:\nCODE: FILEERR\nMESSAGE: File was not found\n StackTrace: %s", fileErr)
-	}
-	b, bErr := ioutil.ReadAll(file)
-	if(bErr != nil){
-		fmt.Printf("ERROR:\nCODE: BYTEERR\nMESSAGE: Couldn't Read File\n StackTrace: %s", bErr)
-	}
-	file.Close()
-	return b
 }

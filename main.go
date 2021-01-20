@@ -9,13 +9,6 @@ import (
  
 var port string = ":" + strconv.Itoa(GetConfig().Port)
 
-//Check ... Check for errors
-func Check(e error){
-	if(e != nil){
-		fmt.Println(e)
-	}
-}
-
 func main() {
 	if(GetConfig().SSL) {
 		fmt.Printf("Listening on https://localhost%s\n", port)

@@ -5,12 +5,13 @@ import (
 	"encoding/json"
 ) 
 
-//StatusRoute ..
+
+//StatusRoute - Struct for response
 type StatusRoute struct {
 	StatusCode int `json:"statusCode"`
 }
 
-//Status ...
+//Status - Sends status to verify api is working
 func Status(w http.ResponseWriter, r *http.Request) {
 	d := StatusRoute{
 		http.StatusOK,

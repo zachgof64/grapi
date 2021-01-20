@@ -1,8 +1,9 @@
 # Logging Settings
 logging: true
-logFile: logs/development.log
+logDir: logs
+logFile: development.log
 logPrefix: '[Local API]'
-# HTTP Server Settings
+# Server Settings
 port: 3000
 ssl: false
 certFile: ssl/cert.pem
