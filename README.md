@@ -28,7 +28,7 @@ HTTP:
 package main
 
 import (
-    "github.com/zeuce/grapi"
+    grapi "github.com/zeuce/grapi"
 )
 
 func main() {
@@ -43,7 +43,7 @@ HTTPS:
 package main
 
 import (
-    "github.com/zeuce/grapi"
+    grapi "github.com/zeuce/grapi"
 )
 
 func main() {
@@ -58,7 +58,7 @@ func main() {
 package main
 
 import (
-    "github.com/zeuce/grapi"
+    grapi "github.com/zeuce/grapi"
 )
 
 func main() {
@@ -75,7 +75,7 @@ GET:
 package main
 
 import (
-    "github.com/zeuce/grapi"
+    grapi "github.com/zeuce/grapi"
     "encoding/json"
 )
 
@@ -99,7 +99,7 @@ POST:
 package main
 
 import (
-    "github.com/zeuce/grapi"
+    grapi "github.com/zeuce/grapi"
     "encoding/json"
 )
 
@@ -123,7 +123,7 @@ DELETE:
 package main
 
 import (
-    "github.com/zeuce/grapi"
+    grapi "github.com/zeuce/grapi"
     "encoding/json"
 )
 
@@ -147,7 +147,7 @@ PATCH:
 package main
 
 import (
-    "github.com/zeuce/grapi"
+    grapi "github.com/zeuce/grapi"
     "encoding/json"
 )
 
@@ -171,7 +171,7 @@ func main() {
 package main
 
 import (
-    "github.com/zeuce/grapi"
+    grapi "github.com/zeuce/grapi"
 )
 
 func main() {
