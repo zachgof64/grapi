@@ -183,7 +183,7 @@ func main() {
             Key: "foo",
             Value: "bar",
         },
-        grapi.Heder {
+        grapi.Header {
             Key: "foo1",
             Value: "bar1",
         },
