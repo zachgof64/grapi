@@ -14,9 +14,13 @@ import (
 var fullLogFile string
 var logP string
 
-//SetupLogging - Setups logging
+// SetupLogging will log add logHandler() to router and create log file with supplied args
+// @param r - Supply mux router so setuplogging can pass logHandler() to router
+// @param logDir - The directory to save your log file to
+// @param logFile - The path to log file
+// @param logPrefix - The prefix displayed in console / log file
 func SetupLogging(r *mux.Router, logDir string, logFile string, logPrefix string) {
-	r.Use(LogHandler)
+	r.Use(logHandler)
 	fullLogFile = logDir + "/" + logFile
 	logP = logPrefix
 	if _, err := os.Stat(logDir); os.IsNotExist(err) {
@@ -28,8 +32,8 @@ func SetupLogging(r *mux.Router, logDir string, logFile string, logPrefix string
 	}
 }
 
-//LogHandler - Adds log to file and outputs it to console
-func LogHandler(next http.Handler) http.Handler {
+// logHandler will log everytime a request is made to server
+func logHandler(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		f, err := os.OpenFile(fullLogFile, os.O_APPEND | os.O_RDWR, 0744)
 		defer f.Close()
