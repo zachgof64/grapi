@@ -10,7 +10,7 @@ A GoLang library to help to help facilitate RESTful API creation
 RUN:
 
 ```
-go get github.com/zeuce/golang-api
+go get github.com/zeuce/grapi
 ```
 
 ## Usage
