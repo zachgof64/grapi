@@ -1,13 +1,14 @@
 package goapi
 
 import (
-	"github.com/gorilla/mux"
-	"net/http"
-	"log"
-	"os"
-	"github.com/zeuce/golang-utils"	
 	"fmt"
 	"io/ioutil"
+	"log"
+	"net/http"
+	"os"
+
+	"github.com/gorilla/mux"
+	utils "github.com/zeuce/golang-utils"
 )
 
 var fullLogFile string
