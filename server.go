@@ -11,8 +11,8 @@ var port string = ":" + strconv.Itoa(p)
 var p int
 
 //SetupServer - Start HTTP server with mux
-func SetupServer(pint int) {
-	p = pint
+func SetupServer(port int) {
+	p = port
 	fmt.Printf("Listening on http://localhost%s\n", port)
 	log.Fatal(http.ListenAndServe(port, GetRouter()))
 }
