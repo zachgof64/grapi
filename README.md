@@ -1,6 +1,6 @@
 # A GoLang RestfulAPI boilerplate
 
-[Installation](https://github.com/golang-api/#install)\
+[Installation](#install)\
 [Usage](https://github.com/golang-api/#usage)
 
 # Install
