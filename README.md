@@ -28,12 +28,12 @@ HTTP:
 package main
 
 import (
-    goapi "github.com/zeuce/golang-api"
+    "github.com/zeuce/grapi"
 )
 
 func main() {
     //Start's a HTTP server on port 3000
-    goapi.SetupServer(3000)
+    grapi.SetupServer(3000)
 }
 ```
 
@@ -43,12 +43,12 @@ HTTPS:
 package main
 
 import (
-    goapi "github.com/zeuce/golang-api"
+    "github.com/zeuce/grapi"
 )
 
 func main() {
     //Start's a HTTPS server on port 3000
-    goapi.SetupServerSSL(3000,"/path/to/certfile", "/path/to/keyfile")
+    grapi.SetupServerSSL(3000,"/path/to/certfile", "/path/to/keyfile")
 }
 ```
 
@@ -58,12 +58,12 @@ func main() {
 package main
 
 import (
-    goapi "github.com/zeuce/golang-api"
+    "github.com/zeuce/grapi"
 )
 
 func main() {
     //Setup logging support
-    goapi.SetupLogging("path/to/logDir", "<LOGFILENAME>", "<PREFIX>")
+    grapi.SetupLogging("path/to/logDir", "<LOGFILENAME>", "<PREFIX>")
 }
 ```
 
@@ -75,12 +75,12 @@ GET:
 package main
 
 import (
-    goapi "github.com/zeuce/golang-api"
+    "github.com/zeuce/grapi"
     "encoding/json"
 )
 
 func handlerFunc(w http.ResponseWriter, r *http.Request) {
-    d := goapi.ResponseStruct {
+    d := grapi.ResponseStruct {
         StatusCode: 200,
         Message: "Yay its working"
     }
@@ -89,7 +89,7 @@ func handlerFunc(w http.ResponseWriter, r *http.Request) {
 
 func main() {
     //Setup GET for /
-    goapi.Get("/", handlerFunc)
+    grapi.Get("/", handlerFunc)
 }
 ```
 
@@ -99,12 +99,12 @@ POST:
 package main
 
 import (
-    goapi "github.com/zeuce/golang-api"
+    "github.com/zeuce/grapi"
     "encoding/json"
 )
 
 func handlerFunc(w http.ResponseWriter, r *http.Request) {
-    d := goapi.ResponseStruct {
+    d := grapi.ResponseStruct {
         StatusCode: 200,
         Message: "Yay its working"
     }
@@ -113,7 +113,7 @@ func handlerFunc(w http.ResponseWriter, r *http.Request) {
 
 func main() {
     //Setup POST for /
-    goapi.Post("/", handlerFunc)
+    grapi.Post("/", handlerFunc)
 }
 ```
 
@@ -123,12 +123,12 @@ DELETE:
 package main
 
 import (
-    goapi "github.com/zeuce/golang-api"
+    "github.com/zeuce/grapi"
     "encoding/json"
 )
 
 func handlerFunc(w http.ResponseWriter, r *http.Request) {
-    d := goapi.ResponseStruct {
+    d := grapi.ResponseStruct {
         StatusCode: 200,
         Message: "Yay its working"
     }
@@ -137,7 +137,7 @@ func handlerFunc(w http.ResponseWriter, r *http.Request) {
 
 func main() {
     //Setup DELETE for /
-    goapi.Delete("/", handlerFunc)
+    grapi.Delete("/", handlerFunc)
 }
 ```
 
@@ -147,12 +147,12 @@ PATCH:
 package main
 
 import (
-    goapi "github.com/zeuce/golang-api"
+    "github.com/zeuce/grapi"
     "encoding/json"
 )
 
 func handlerFunc(w http.ResponseWriter, r *http.Request) {
-    d := goapi.ResponseStruct {
+    d := grapi.ResponseStruct {
         StatusCode: 200,
         Message: "Yay its working"
     }
@@ -161,7 +161,7 @@ func handlerFunc(w http.ResponseWriter, r *http.Request) {
 
 func main() {
     //Setup PATCH for /
-    goapi.Patch("/", handlerFunc)
+    grapi.Patch("/", handlerFunc)
 }
 ```
 
@@ -171,19 +171,19 @@ func main() {
 package main
 
 import (
-    goapi "github.com/zeuce/golang-api"
+    "github.com/zeuce/grapi"
 )
 
 func main() {
     //Add global header
-    goapi.AddDefaultHeader("key", "val")
+    grapi.AddDefaultHeader("key", "val")
     //Adding multiple global headers
-    goapi.AddDefaultHeaders([]goapi.Header{
-        goapi.Header {
+    grapi.AddDefaultHeaders([]grapi.Header{
+        grapi.Header {
             Key: "foo",
             Value: "bar",
         },
-        goapi.Heder {
+        grapi.Heder {
             Key: "foo1",
             Value: "bar1",
         },
