@@ -7,14 +7,13 @@ import (
 	"net/http"
 	"os"
 
-	utils "github.com/zeuce/golang-utils"
+	gril "github.com/zeuce/gril"
 )
 
 var fullLogFile string
 var logP string
 
 // SetupLogging will log add logHandler() to router and create log file with supplied args
-// @param r - Supply mux router so setuplogging can pass logHandler() to router
 // @param logDir - The directory to save your log file to
 // @param logFile - The log file name
 // @param logPrefix - The prefix displayed in console / log file
@@ -36,7 +35,7 @@ func logHandler(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		f, err := os.OpenFile(fullLogFile, os.O_APPEND|os.O_RDWR, 0744)
 		defer f.Close()
-		utils.Check(err)
+		gril.Check(err)
 		logger := log.New(f, logP+" ", log.LstdFlags)
 		logger.Printf("%s %s %s", r.Method, r.RequestURI, r.RemoteAddr)
 		fmt.Printf("%s %s\n", r.Method, r.RequestURI)

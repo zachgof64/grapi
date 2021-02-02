@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-//Check - Prints error if error not nil
+//Check will log output to console on error
 func Check(err error) {
 	if(err != nil){
 		fmt.Println(err)

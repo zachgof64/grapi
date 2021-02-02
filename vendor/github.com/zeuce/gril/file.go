@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-//GetByte - Returns []byte version of the filepath given
+//GetByte will Return []byte version of the filepath given
 func GetByte(filePath string) []byte {
 	file, fileErr := os.Open(filePath)
 	Check(fileErr)

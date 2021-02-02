@@ -1,6 +1,6 @@
 # github.com/gorilla/mux v1.8.0
 ## explicit
 github.com/gorilla/mux
-# github.com/zeuce/golang-utils v0.0.0-20210124003833-fa66df96d087
+# github.com/zeuce/gril v1.0.0
 ## explicit
-github.com/zeuce/golang-utils
+github.com/zeuce/gril
