@@ -24,7 +24,7 @@ go get github.com/zeuce/grapi
 
 HTTP:
 
-```
+```go
 package main
 
 import (
@@ -39,7 +39,7 @@ func main() {
 
 HTTPS:
 
-```
+```go
 package main
 
 import (
@@ -54,7 +54,7 @@ func main() {
 
 ### Setup Logging
 
-```
+```go
 package main
 
 import (
@@ -71,7 +71,7 @@ func main() {
 
 GET:
 
-```
+```go
 package main
 
 import (
@@ -95,7 +95,7 @@ func main() {
 
 POST:
 
-```
+```go
 package main
 
 import (
@@ -119,7 +119,7 @@ func main() {
 
 DELETE:
 
-```
+```go
 package main
 
 import (
@@ -143,7 +143,7 @@ func main() {
 
 PATCH:
 
-```
+```go
 package main
 
 import (
@@ -167,7 +167,7 @@ func main() {
 
 ### Adding Global Headers
 
-```
+```go
 package main
 
 import (
