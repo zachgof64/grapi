@@ -1,4 +1,4 @@
-package goapi
+package grapi
 
 import (
 	"fmt"

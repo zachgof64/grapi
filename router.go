@@ -1,4 +1,4 @@
-package goapi
+package grapi
 
 import "net/http"
 
@@ -19,28 +19,28 @@ var defaultHeaders []Header = []Header{};
 // Get will setup a GET handle function
 // @param path - The path the server will check on request
 // @param f - A function to tell it what to do on request
-func Get(path string, f func (w http.ResponseWriter, r *http.Request)) {
+func Get(path string, f func(w http.ResponseWriter, r *http.Request)) {
 	Router.HandleFunc(path, f).Methods("GET")
 }
 
 // Post will setup a POST handle function
 // @param path - The path the server will check on request
 // @param f - A function to tell it what to do on request
-func Post(path string, f func (w http.ResponseWriter, r *http.Request)) {
+func Post(path string, f func(w http.ResponseWriter, r *http.Request)) {
 	Router.HandleFunc(path, f).Methods("POST")
 }
 
 // Delete will setup a DELETE handle function
 // @param path - The path the server will check on request
 // @param f - A function to tell it what to do on request
-func Delete(path string, f func (w http.ResponseWriter, r *http.Request)) {
+func Delete(path string, f func(w http.ResponseWriter, r *http.Request)) {
 	Router.HandleFunc(path, f).Methods("DELETE")
 }
 
 // Patch will setup a PATCH handle function
 // @param path - The path the server will check on request
 // @param f - A function to tell it what to do on request
-func Patch(path string, f func (w http.ResponseWriter, r *http.Request)) {
+func Patch(path string, f func(w http.ResponseWriter, r *http.Request)) {
 	Router.HandleFunc(path, f).Methods("PATCH")
 }
 

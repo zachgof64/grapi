@@ -9,7 +9,7 @@ A GoLang library to help to help facilitate RESTful API creation
 
 RUN:
 
-```
+```bash
 go get github.com/zeuce/grapi
 ```
 
@@ -28,7 +28,7 @@ HTTP:
 package main
 
 import (
-    grapi "github.com/zeuce/grapi"
+    "github.com/zeuce/grapi"
 )
 
 func main() {
@@ -43,7 +43,7 @@ HTTPS:
 package main
 
 import (
-    grapi "github.com/zeuce/grapi"
+    "github.com/zeuce/grapi"
 )
 
 func main() {
@@ -58,7 +58,7 @@ func main() {
 package main
 
 import (
-    grapi "github.com/zeuce/grapi"
+   "github.com/zeuce/grapi"
 )
 
 func main() {
@@ -171,7 +171,7 @@ func main() {
 package main
 
 import (
-    grapi "github.com/zeuce/grapi"
+    "github.com/zeuce/grapi"
 )
 
 func main() {
